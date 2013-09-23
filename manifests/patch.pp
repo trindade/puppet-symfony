@@ -17,5 +17,6 @@ define symfony::patch(
   exec { "AppKernel-patch":
     cwd     => "/vagrant/app",
     command => "/usr/bin/patch -ts </tmp/AppKernel.patch",
+    onlyif  => "grep -c 'getCacheDir' AppKernel.php"
   }
 }
