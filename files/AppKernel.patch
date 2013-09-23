@@ -1,0 +1,25 @@
+--- AppKernel.php	2013-09-23 14:56:55.946953876 +0200
++++ AppKernel-optimized.php	2013-09-23 14:57:45.010952589 +0200
+@@ -10,22 +10,4 @@
+     {
+         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+     }
+-
+-    public function getCacheDir()
+-    {
+-        if (in_array($this->environment, array('dev', 'test'))) {
+-            return '/dev/shm/vagrantee/cache/' .  $this->environment;
+-        }
+-
+-        return parent::getCacheDir();
+-    }
+-
+-    public function getLogDir()
+-    {
+-        if (in_array($this->environment, array('dev', 'test'))) {
+-            return '/dev/shm/vagrantee/logs';
+-        }
+-
+-        return parent::getLogDir();
+-    }
+ }
