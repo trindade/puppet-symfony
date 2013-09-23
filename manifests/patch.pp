@@ -11,11 +11,11 @@ define symfony::patch(
     ensure => present,
     path   => '/tmp/AppKernel.patch',
     mode   => '0644',
-    source => 'puppet:///modules/puppet-symfony/AppKernel.patch',
+    source => 'puppet:///modules/symfony/AppKernel.patch',
   }
 
   exec { "AppKernel-patch":
     cwd     => "/vagrant/app",
-    command => "/usr/bin/patch -ts <AppKernel.patch",
+    command => "/usr/bin/patch -ts </tmp/AppKernel.patch",
   }
 }
